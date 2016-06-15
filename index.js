@@ -4,7 +4,7 @@ export default function(event, context, callback) {
   const headers = event.headers;
   const body = event.body;
   Router
-    .find(method, path, headers, body, ctx)
+    .find(method, path, headers, body, event)
     .then(result => callback(null, result)) 
     .catch((err) => {
       err.code||ctx.status;
